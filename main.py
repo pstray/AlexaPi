@@ -119,6 +119,7 @@ def start():
 				rf.close()
 				inp = None
 				alexa()
+                                GPIO.wait_for_edge(button, GPIO.FALLING)
 			elif val == 0:
 				GPIO.output(25, GPIO.HIGH)
 				inp = alsaaudio.PCM(alsaaudio.PCM_CAPTURE, alsaaudio.PCM_NORMAL, device)
